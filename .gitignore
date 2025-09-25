@@ -1,0 +1,25 @@
+# ==========================
+# NetBeans / Java Web Ignore
+# ==========================
+
+# Carpetas generadas automáticamente (no se versionan)
+build/
+dist/
+
+# Configuración privada de NetBeans (cada usuario tiene la suya)
+nbproject/private/
+nbproject/configs/
+
+# Archivos de caché
+*.class
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Incluir librerías compartidas
+# ==========================
+# ⚠️ Importante: NO ignores WEB-INF/lib, así el conector MySQL queda en el repo.
+# Así tus compañeros no tendrán que volver a configurarlo en Libraries.
