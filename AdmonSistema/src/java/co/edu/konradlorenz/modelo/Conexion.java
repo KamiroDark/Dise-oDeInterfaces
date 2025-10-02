@@ -15,21 +15,25 @@ import java.sql.SQLException;
 public class Conexion {
 
     public static String usuario = "root";
-    public static String clave = "";
-    public static String servidor = "localhost:3306";
-    public static String BD = "tienda";
+    public static String clave = "admin1234";
+    public static String servidor = "127.0.0.1"; 
+    public static String puerto = "3306";
+    public static String BD = "laboratorio5";
 
     public Connection crearConexion() {
         Connection con = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String URL = "jdbc:mysql://" + servidor + "/" + BD;
+            String URL = "jdbc:mysql://" + servidor + ":" + puerto + "/" + BD
+                       + "?useSSL=false&serverTimezone=UTC";
             con = DriverManager.getConnection(URL, usuario, clave);
-        } catch (java.lang.ClassNotFoundException ex) {
-            System.out.println("classnotfound");
+            System.out.println("✅ Conectado a la base de datos.");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("❌ Error: no se encontró el driver JDBC -> " + ex.getMessage());
         } catch (SQLException e) {
-            System.out.println("error de enlace canal");
+            System.out.println("❌ Error SQL: " + e.getMessage());
+            e.printStackTrace();
         }
 
         return con;
