@@ -26,16 +26,18 @@ public class UsuarioDAO implements CRUD {
 
         try {
             con = cn.crearConexion();
-            String q = "INSERT INTO datos (identificacion, nombre, apellido, email, usuario, clave, id_perfil)" + "values( ?,  ?,  ?,  ?,  ?,  ?,  ?)";
+            String q = "INSERT INTO `usuario` (identificacion, nombre, apellido, email, telefono, usuario, clave, id_perfil) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        ps = con.prepareStatement(q);
+            ps = con.prepareStatement(q);
 
             ps.setString(1, u.getIdentificacion());
             ps.setString(2, u.getNombre());
             ps.setString(3, u.getApellido());
             ps.setString(4, u.getEmail());
-            ps.setString(5, u.getUsuario());
-            ps.setString(6, u.getClave());
+            ps.setString(5, u.getTelefono());
+            ps.setString(6, u.getUsuario());
+            ps.setString(7, u.getClave());
             ps.setInt(7, u.getIdperfil());
 
             estatus = ps.executeUpdate();

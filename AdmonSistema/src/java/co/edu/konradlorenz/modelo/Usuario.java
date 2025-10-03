@@ -15,6 +15,7 @@ public class Usuario {
     String nombre;
     String apellido;
     String email;
+    String telefono;
     String usuario;
     String clave;
     int idperfil;
@@ -22,13 +23,14 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int iddato, String identificacion, String nombre, String apellido, String email, String usuario,
+    public Usuario(int iddato, String identificacion, String nombre, String apellido, String email, String telefono, String usuario,
             String clave, int idperfil) {
         this.iddato = iddato;
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.telefono = telefono;
         this.usuario = usuario;
         this.clave = clave;
         this.idperfil = idperfil;
@@ -74,6 +76,14 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    
     public String getUsuario() {
         return usuario;
     }
