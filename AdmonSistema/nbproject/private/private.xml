@@ -5,6 +5,14 @@
         <group>
             <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/Conexion.java</file>
             <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/pruebaConexion.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/index.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/UsuarioDAO.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/Usuario.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/controlador/ControladorUsuario.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/interfaces/CRUD.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/listarUsuarios.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/editarUsuario.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

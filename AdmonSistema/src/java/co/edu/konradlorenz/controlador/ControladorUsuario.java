@@ -1,102 +1,122 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package co.edu.konradlorenz.controlador;
 
 import co.edu.konradlorenz.modelo.Usuario;
 import co.edu.konradlorenz.modelo.UsuarioDAO;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author camiloprieto
- */
+@WebServlet(name = "ControladorUsuario", urlPatterns = {"/ControladorUsuario"})
 public class ControladorUsuario extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
 
-        String identificacion;
-        String nombre;
-        String apellido;
-        String email;
-        String telefono;
-        String usuario;
-        String clave;
-        int idperfil;
+        String accion = request.getParameter("accion");
+        UsuarioDAO dao = new UsuarioDAO();
 
-        identificacion = new String(request.getParameter("cidentificacion").getBytes("ISO-8859-1"), "UTF-8");
-        nombre = new String(request.getParameter("cnombre").getBytes("ISO-8859-1"), "UTF-8");
-        apellido = new String(request.getParameter("capellido").getBytes("ISO-8859-1"), "UTF-8");
-        email = new String(request.getParameter("cmail").getBytes("ISO-8859-1"), "UTF-8");
-        telefono = new String(request.getParameter("ctelefono").getBytes("ISO-8859-1"), "UFT-8");
-        usuario = new String(request.getParameter("cusuario").getBytes("ISO-8859-1"), "UTF-8");
-        clave = new String(request.getParameter("cclave").getBytes("ISO-8859-1"), "UTF-8");
-        idperfil = Integer.parseInt(request.getParameter("cidperfil"));
+        try {
+            // 🔹 Acción por defecto: agregar usuario
+            if (accion == null || accion.equals("agregar")) {
 
-        Usuario u = new Usuario();
-        UsuarioDAO udao = new UsuarioDAO();
+                int identificacion = Integer.parseInt(request.getParameter("cidentificacion"));
+                String nombre = request.getParameter("cnombre");
+                String apellido = request.getParameter("capellido");
+                String email = request.getParameter("cmail");
+                String telefono = request.getParameter("ctelefono");
+                String usuario = request.getParameter("cusuario");
+                String clave = request.getParameter("cclave");
+                String perfil = request.getParameter("cperfil");
 
-        u.setIdentificacion(identificacion);
-        u.setNombre(nombre);
-        u.setApellido(apellido);
-        u.setEmail(email);
-        u.setTelefono(telefono);
-        u.setUsuario(usuario);
-        u.setClave(clave);
-        u.setIdperfil(idperfil);
+                Usuario u = new Usuario();
+                u.setIdentificacion(identificacion);
+                u.setNombre(nombre);
+                u.setApellido(apellido);
+                u.setEmail(email);
+                u.setTelefono(telefono);
+                u.setUsuario(usuario);
+                u.setClave(clave);
+                u.setPerfil(perfil);
 
-        int status = udao.agregarUsuario(u);
+                int status = dao.agregarUsuario(u);
 
-        if (status > 0) {
-            response.sendRedirect("mensaje.jsp");
+                if (status > 0) {
+                    response.sendRedirect("listarUsuarios.jsp");
+                } else {
+                    response.getWriter().println("<h3 style='color:red;'>❌ Error al registrar usuario.</h3>");
+                }
+
+                // 🔹 Acción Actualizar
+            } else if (accion.equals("actualizar")) {
+
+                int identificacion = Integer.parseInt(request.getParameter("identificacion"));
+                String nombre = request.getParameter("nombre");
+                String apellido = request.getParameter("apellido");
+                String email = request.getParameter("email");
+                String telefono = request.getParameter("telefono");
+                String usuario = request.getParameter("usuario");
+                String clave = request.getParameter("clave");
+                String perfil = request.getParameter("perfil");
+
+                Usuario u = new Usuario();
+                u.setIdentificacion(identificacion);
+                u.setNombre(nombre);
+                u.setApellido(apellido);
+                u.setEmail(email);
+                u.setTelefono(telefono);
+                u.setUsuario(usuario);
+                u.setClave(clave);
+                u.setPerfil(perfil);
+
+                int estado = dao.actualizarDatos(u);
+
+                if (estado > 0) {
+                    response.sendRedirect("listarUsuarios.jsp");
+                } else {
+                    response.getWriter().println("<h3 style='color:red;'>❌ No se pudo actualizar el usuario.</h3>");
+                }
+                //Acción Eliminar
+            } else if (accion.equals("eliminar")) {
+
+                int identificacion = Integer.parseInt(request.getParameter("identificacion"));
+                int estado = dao.eliminarDatos(identificacion);
+
+                if (estado > 0) {
+                    response.sendRedirect("listarUsuarios.jsp");
+                } else {
+                    response.getWriter().println("<h3 style='color:red;'>❌ No se pudo eliminar el usuario.</h3>");
+                }
+
+            } else {
+                response.getWriter().println("<h3 style='color:red;'>Acción no reconocida.</h3>");
+            }
+
+        } catch (NumberFormatException e) {
+            response.getWriter().println("<h3 style='color:red;'>Error: ID no válido o faltante.</h3>");
+        } catch (Exception e) {
+            response.getWriter().println("<h3 style='color:red;'>Error general: " + e.getMessage() + "</h3>");
         }
-
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+        return "Controlador de Usuario - CRUD";
+    }
 }

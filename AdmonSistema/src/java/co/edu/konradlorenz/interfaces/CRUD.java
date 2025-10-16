@@ -5,6 +5,7 @@
 package co.edu.konradlorenz.interfaces;
 
 import co.edu.konradlorenz.modelo.Usuario;
+import java.util.List;
 
 /**
  *
@@ -13,11 +14,8 @@ import co.edu.konradlorenz.modelo.Usuario;
 public interface CRUD {
 
     public int agregarUsuario(Usuario u);
-
     public int actualizarDatos(Usuario u);
-
     public int eliminarDatos(int id);
-
     public Usuario listarDatos_Id(int id);
-    
+    public List<Usuario> listarUsuarios();
 }

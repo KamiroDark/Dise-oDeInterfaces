@@ -4,51 +4,22 @@
  */
 package co.edu.konradlorenz.modelo;
 
-/**
- *
- * @author camiloprieto
- */
 public class Usuario {
+    private int identificacion;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String telefono;
+    private String usuario;
+    private String clave;
+    private String perfil;
 
-    int iddato;
-    String identificacion;
-    String nombre;
-    String apellido;
-    String email;
-    String telefono;
-    String usuario;
-    String clave;
-    int idperfil;
-
-    public Usuario() {
-    }
-
-    public Usuario(int iddato, String identificacion, String nombre, String apellido, String email, String telefono, String usuario,
-            String clave, int idperfil) {
-        this.iddato = iddato;
-        this.identificacion = identificacion;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.telefono = telefono;
-        this.usuario = usuario;
-        this.clave = clave;
-        this.idperfil = idperfil;
-    }
-
-    public int getIddato() {
-        return iddato;
-    }
-
-    public void setIddato(int iddato) {
-        this.iddato = iddato;
-    }
-
-    public String getIdentificacion() {
+    // Getters y Setters
+    public int getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(String identificacion) {
+    public void setIdentificacion(int identificacion) {
         this.identificacion = identificacion;
     }
 
@@ -83,7 +54,7 @@ public class Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
     public String getUsuario() {
         return usuario;
     }
@@ -100,14 +71,12 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public int getIdperfil() {
-        return idperfil;
+    public String getPerfil() {
+        return perfil;
     }
 
-    public void setIdperfil(int idperfil) {
-        this.idperfil = idperfil;
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
-    
-    
 }
 
