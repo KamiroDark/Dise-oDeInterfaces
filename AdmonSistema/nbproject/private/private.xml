@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/Conexion.java</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/pruebaConexion.jsp</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/index.jsp</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/UsuarioDAO.java</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/Usuario.java</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/controlador/ControladorUsuario.java</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/interfaces/CRUD.java</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/listarUsuarios.jsp</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/editarUsuario.jsp</file>
-            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/WEB-INF/web.xml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
