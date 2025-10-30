@@ -4,26 +4,31 @@
  */
 package co.edu.konradlorenz.controlador;
 
+import java.io.IOException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.io.IOException;
 
+@WebServlet(name = "CerrarSesion", urlPatterns = {"/cerrarSesion"})
 public class CerrarSesion extends HttpServlet {
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        HttpSession ses = request.getSession(false);
-        try {
-            HttpSession sesion_cli = request.getSession(false);
-            sesion_cli.invalidate();
-            response.sendRedirect("index.jsp");
-        } catch (IOException e) {
-            ses.setAttribute("mensaje", "Session Activa.");
-            ses.setAttribute("exc", e.toString());
+        
+        HttpSession sesion = request.getSession(false);
+        if (sesion != null) {
+            sesion.invalidate();
         }
+        response.sendRedirect("index.jsp");
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
     }
 }

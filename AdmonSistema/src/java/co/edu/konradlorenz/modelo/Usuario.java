@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package co.edu.konradlorenz.modelo;
 
 public class Usuario {
+
+    private int id;  // ← AGREGAR ESTO
     private int identificacion;
     private String nombre;
     private String apellido;
@@ -12,9 +10,22 @@ public class Usuario {
     private String telefono;
     private String usuario;
     private String clave;
-    private String perfil;
+    private int perfil;
 
-    // Getters y Setters
+    // Constructor vacío
+    public Usuario() {
+    }
+
+    // ← AGREGAR estos dos métodos
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // ... el resto de tus getters y setters
     public int getIdentificacion() {
         return identificacion;
     }
@@ -71,12 +82,11 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public String getPerfil() {
+    public int getPerfil() {
         return perfil;
     }
 
-    public void setPerfil(String perfil) {
+    public void setPerfil(int perfil) {
         this.perfil = perfil;
     }
 }
-

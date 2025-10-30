@@ -2,6 +2,26 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/index.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/Registro.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/LoginDAO.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/controlador/CtrolValidar.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/cpanel.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/controlador/CerrarSesion.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/Usuario.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/Conexion.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/controlador/ControladorUsuario.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/src/java/co/edu/konradlorenz/modelo/UsuarioDAO.java</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/front.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/editarUsuario.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/listarUsuarios.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/miPerfil.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/reportes.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/configuracion.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/tareas.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/pedidos.jsp</file>
+            <file>file:/Users/camiloprieto/Documents/Diseño%20de%20Interfaces/Dise-oDeInterfaces/AdmonSistema/web/soporte.jsp</file>
+        </group>
     </open-files>
 </project-private>

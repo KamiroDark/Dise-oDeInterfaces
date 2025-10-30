@@ -31,7 +31,7 @@ public class ControladorUsuario extends HttpServlet {
                 String telefono = request.getParameter("ctelefono");
                 String usuario = request.getParameter("cusuario");
                 String clave = request.getParameter("cclave");
-                String perfil = request.getParameter("cperfil");
+                int perfil = Integer.parseInt(request.getParameter("perfil"));
 
                 Usuario u = new Usuario();
                 u.setIdentificacion(identificacion);
@@ -46,9 +46,9 @@ public class ControladorUsuario extends HttpServlet {
                 int status = dao.agregarUsuario(u);
 
                 if (status > 0) {
-                    response.sendRedirect("listarUsuarios.jsp");
+                    response.sendRedirect("listarUsuarios.jsp?success=Usuario registrado correctamente");
                 } else {
-                    response.getWriter().println("<h3 style='color:red;'>❌ Error al registrar usuario.</h3>");
+                    response.sendRedirect("Registro.jsp?error=No se pudo registrar el usuario");
                 }
 
                 // 🔹 Acción Actualizar
@@ -61,7 +61,7 @@ public class ControladorUsuario extends HttpServlet {
                 String telefono = request.getParameter("telefono");
                 String usuario = request.getParameter("usuario");
                 String clave = request.getParameter("clave");
-                String perfil = request.getParameter("perfil");
+                int perfil = Integer.parseInt(request.getParameter("perfil"));
 
                 Usuario u = new Usuario();
                 u.setIdentificacion(identificacion);
@@ -76,30 +76,31 @@ public class ControladorUsuario extends HttpServlet {
                 int estado = dao.actualizarDatos(u);
 
                 if (estado > 0) {
-                    response.sendRedirect("listarUsuarios.jsp");
+                    response.sendRedirect("listarUsuarios.jsp?success=Usuario actualizado correctamente");
                 } else {
-                    response.getWriter().println("<h3 style='color:red;'>❌ No se pudo actualizar el usuario.</h3>");
+                    response.sendRedirect("listarUsuarios.jsp?error=No se pudo actualizar el usuario");
                 }
-                //Acción Eliminar
+
+                // 🔹 Acción Eliminar
             } else if (accion.equals("eliminar")) {
 
                 int identificacion = Integer.parseInt(request.getParameter("identificacion"));
                 int estado = dao.eliminarDatos(identificacion);
 
                 if (estado > 0) {
-                    response.sendRedirect("listarUsuarios.jsp");
+                    response.sendRedirect("listarUsuarios.jsp?success=Usuario eliminado correctamente");
                 } else {
-                    response.getWriter().println("<h3 style='color:red;'>❌ No se pudo eliminar el usuario.</h3>");
+                    response.sendRedirect("listarUsuarios.jsp?error=No se pudo eliminar el usuario");
                 }
 
             } else {
-                response.getWriter().println("<h3 style='color:red;'>Acción no reconocida.</h3>");
+                response.sendRedirect("listarUsuarios.jsp?error=Acción no reconocida");
             }
 
         } catch (NumberFormatException e) {
-            response.getWriter().println("<h3 style='color:red;'>Error: ID no válido o faltante.</h3>");
+            response.sendRedirect("listarUsuarios.jsp?error=Datos inválidos: " + e.getMessage());
         } catch (Exception e) {
-            response.getWriter().println("<h3 style='color:red;'>Error general: " + e.getMessage() + "</h3>");
+            response.sendRedirect("listarUsuarios.jsp?error=Error general: " + e.getMessage());
         }
     }
 

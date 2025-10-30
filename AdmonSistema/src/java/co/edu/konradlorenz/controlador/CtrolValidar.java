@@ -39,18 +39,26 @@ public class CtrolValidar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession ses = request.getSession(true);
         String accion = request.getParameter("accion");
+
         if (accion.equalsIgnoreCase("Ingresar")) {
             String usu = request.getParameter("cusuario");
             String cla = request.getParameter("cclave");
             datos = logindao.Login_datos(usu, cla);
-            if (datos.getUsuario() != null) {
-                request.setAttribute("datos", datos);
-                HttpSession sesion_cli = request.getSession(true);
-                sesion_cli.setAttribute("nUsuario", request.getParameter("cusuario"));
+
+            if (datos != null && datos.getUsuario() != null) {
+                // Crear sesión con todos los datos del usuario
+                HttpSession sesion = request.getSession(true);
+                sesion.setAttribute("nUsuario", datos.getUsuario());  // ← AGREGAR ESTA LÍNEA
+                sesion.setAttribute("usuario", datos.getUsuario());
+                sesion.setAttribute("nombre", datos.getNombre());
+                sesion.setAttribute("apellido", datos.getApellido());
+                sesion.setAttribute("perfil", datos.getPerfil());
+                sesion.setAttribute("datosCompletos", datos);
+
                 request.getRequestDispatcher("cpanel.jsp").forward(request, response);
             } else {
+                request.setAttribute("error", "Usuario o contraseña incorrectos");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         } else {
